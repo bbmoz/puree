@@ -41,21 +41,20 @@ test('.configure(): setup cli commands', t => {
   t.is(cli.argv, 'rainbow')
 })
 
-test('.isInit: checks if command is init', t => {
-  cli.argv = { _: ['init'] }
-  t.is(cli.isInit, true)
-
-  cli.argv = { _: [] }
-  t.is(cli.isInit, false)
+test('.isInit, .isLs: checks which command was used', t => {
+  checkCommand('init', t)
+  checkCommand('ls', t)
 })
 
-test('.isLs: checks if command is ls', t => {
-  cli.argv = { _: ['ls'] }
-  t.is(cli.isLs, true)
+function checkCommand (command, t) {
+  const getter = 'is' + command.charAt(0).toUpperCase() + command.slice(1)
+
+  cli.argv = { _: [command] }
+  t.is(cli[getter], true)
 
   cli.argv = { _: [] }
-  t.is(cli.isLs, false)
-})
+  t.is(cli[getter], false)
+}
 
 let cli, args
 test.beforeEach('setup', () => {
