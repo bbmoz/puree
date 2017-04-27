@@ -1,0 +1,60 @@
+{
+  "name": "puree",
+  "version": "0.0.0-development",
+  "description": "Scaffold projects easily however you like!",
+  "scripts": {
+    "prebuild": "rm -rf dist/",
+    "build": "babel src/ -d dist/",
+    "lint": "eslint . && flow",
+    "pretest": "yarn lint",
+    "test": "ava",
+    "prerelease": "yarn build",
+    "release": "semantic-release pre && npm publish && semantic-release post",
+    "commitmsg": "validate-commit-msg"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "puree": "cli/puree"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bbmoz/puree.git"
+  },
+  "files": [],
+  "keywords": [],
+  "engines": {
+    "node": ">=6"
+  },
+  "bugs": {
+    "url": "https://github.com/bbmoz/puree/issues"
+  },
+  "homepage": "https://github.com/bbmoz/puree",
+  "ava": {
+    "files": [],
+    "source": [],
+    "failWithoutAssertions": true,
+    "powerAssert": true,
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  },
+  "devDependencies": {
+    "ava": "^0.19.1",
+    "babel-cli": "^6.24.1",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-flowtype": "^2.32.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "flow-bin": "^0.44.2",
+    "husky": "^0.13.3",
+    "semantic-release": "^6.3.2",
+    "sinon": "^2.1.0",
+    "validate-commit-msg": "^2.12.1",
+    "yargs": "^7.1.0"
+  }
+}

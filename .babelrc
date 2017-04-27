@@ -1,0 +1,7 @@
+{
+  "presets": [
+    "latest",
+    "flow"
+  ],
+  "plugins": ["transform-runtime"]
+}
