@@ -5,7 +5,7 @@
   "scripts": {
     "prebuild": "rm -rf dist/",
     "build": "babel src/ -d dist/",
-    "lint": "eslint . && flow",
+    "lint": "eslint src/ test/ && flow",
     "pretest": "yarn lint",
     "test": "ava",
     "prerelease": "yarn build",
@@ -21,8 +21,22 @@
     "type": "git",
     "url": "https://github.com/bbmoz/puree.git"
   },
-  "files": [],
-  "keywords": [],
+  "files": [
+    "cli/",
+    "dist/",
+    "example",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "scaffold",
+    "project",
+    "github",
+    "generator",
+    "init",
+    "bootstrap",
+    "starter"
+  ],
   "engines": {
     "node": ">=6"
   },
@@ -31,8 +45,13 @@
   },
   "homepage": "https://github.com/bbmoz/puree",
   "ava": {
-    "files": [],
-    "source": [],
+    "files": [
+      "test/**/*.js"
+    ],
+    "source": [
+      "src/**/*.js",
+      "!src/index.js"
+    ],
     "failWithoutAssertions": true,
     "powerAssert": true,
     "require": [
@@ -43,6 +62,10 @@
   "devDependencies": {
     "ava": "^0.19.1",
     "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-latest": "^6.24.1",
     "eslint": "^3.19.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-flowtype": "^2.32.1",
