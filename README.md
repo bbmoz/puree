@@ -6,9 +6,20 @@
 [![deps][deps]][deps-url]
 [![license][license]][license-url]
 
-![example][example]
-
 > Scaffold projects easily however you like!
+
+## Get Started
+
+```bash
+$ npm install -g puree
+```
+
+## CLI
+
+```bash
+$ puree init [-s|--source 'url']  # use scaffold
+$ puree ls                        # list available scaffolds
+```
 
 [![info][info]][info-url]
 
@@ -29,8 +40,6 @@
 
 [license]: https://img.shields.io/badge/license-MIT-blue.svg
 [license-url]: https://github.com/bbmoz/puree/blob/master/LICENSE
-
-[example]: /media/example.png
 
 [info]: https://nodei.co/npm/puree.png?compact=true
 [info-url]: https://www.npmjs.com/package/puree
