@@ -6,7 +6,7 @@
 [![deps][deps]][deps-url]
 [![license][license]][license-url]
 
-> Load scaffolds from any repo.
+> Load scaffolds from any repo!
 
 ## Get Started
 
