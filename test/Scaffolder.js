@@ -21,11 +21,7 @@ test('._download(): error', async t => { t.plan(1)
 test('.load(): download resource and copy scaffold', async t => {
   const resource = 'bbmoz/puree'
 
-  scaffolder._download = stub()
-    .withArgs(`https://github.com/${resource}`)
-    .returns(new Promise(resolve => {
-      resolve('puree')
-    }))
+  scaffolder._download = stubDownload(resource, 'puree')
 
   const loggerMock = mock(logger)
   loggerMock.expects('log')
@@ -44,11 +40,7 @@ test('.load(): download resource and copy scaffold', async t => {
 test('.load(): error', async t => {
   const resource = 'bbmoz/puree'
 
-  scaffolder._download = stub()
-    .withArgs(`https://github.com/${resource}`)
-    .returns(new Promise(resolve => {
-      resolve('rainbow')
-    }))
+  scaffolder._download = stubDownload(resource, 'rainbow')
 
   const loggerMock = mock(logger)
   loggerMock.expects('log')
@@ -62,6 +54,14 @@ test('.load(): error', async t => {
   loggerMock.verify()
   t.pass()
 })
+
+function stubDownload (resource, name) {
+  return stub()
+    .withArgs(`https://github.com/${resource}`)
+    .returns(new Promise(resolve => {
+      resolve(name)
+    }))
+}
 
 let scaffolder, logger
 test.beforeEach('setup', t => { t.plan(1)
