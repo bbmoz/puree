@@ -1,6 +1,6 @@
 {
   "name": "puree",
-  "version": "0.0.0-development",
+  "version": "0.1.0",
   "description": "Load scaffolds from any repo!",
   "scripts": {
     "prebuild": "rm -rf dist/",
