@@ -1,7 +1,7 @@
 {
   "name": "puree",
   "version": "0.0.0-development",
-  "description": "Scaffold projects easily however you like!",
+  "description": "Load scaffolds from any repo.",
   "scripts": {
     "prebuild": "rm -rf dist/",
     "build": "babel src/ -d dist/",

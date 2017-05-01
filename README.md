@@ -6,13 +6,17 @@
 [![deps][deps]][deps-url]
 [![license][license]][license-url]
 
-> Scaffold projects by loading from any repo
+> Load scaffolds from any repo.
 
 ## Get Started
 
 ```bash
 $ npm install -g puree
 ```
+
+## Prerequisite
+
+Puree uses SVN to manage scaffold downloads. You may follow the installation instructions (see part II) from the [subversion quick guide](http://svn.apache.org/repos/asf/subversion/trunk/INSTALL).
 
 ## CLI
 
