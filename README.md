@@ -6,7 +6,7 @@
 [![deps][deps]][deps-url]
 [![license][license]][license-url]
 
-> Scaffold projects easily however you like!
+> Scaffold projects by loading from any repo
 
 ## Get Started
 
@@ -17,8 +17,8 @@ $ npm install -g puree
 ## CLI
 
 ```bash
-$ puree init [-s|--source 'url']  # use scaffold
-$ puree ls                        # list available scaffolds
+$ puree init [-s|--source 'repo-url']   # load scaffold from repo-url
+$ puree ls                              # list available scaffolds
 ```
 
 [![info][info]][info-url]

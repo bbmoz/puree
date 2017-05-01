@@ -24,7 +24,6 @@
   "files": [
     "cli/",
     "dist/",
-    "example",
     "README.md",
     "LICENSE"
   ],

@@ -26,6 +26,10 @@ class Cli {
   get isLs () {
     return this.argv._[0] === 'ls'
   }
+
+  get source () {
+    return this.argv.s
+  }
 }
 
 function initCommand (args) {

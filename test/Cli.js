@@ -2,11 +2,7 @@ import test from 'ava'
 import { mock, match } from 'sinon'
 import Cli from './../src/Cli'
 
-test('init: instance vars', t => {
-  t.is(cli.args, args)
-})
-
-test('.configure(): setup cli commands', t => {
+test('.configure(): setup cli commands', t => { t.plan(1)
   const argsMock = mock(args)
   argsMock.expects('usage')
     .once()
@@ -41,9 +37,15 @@ test('.configure(): setup cli commands', t => {
   t.is(cli.argv, 'rainbow')
 })
 
-test('.isInit, .isLs: checks which command was used', t => {
+test('.isInit, .isLs: checks which command was used', t => { t.plan(4)
   checkCommand('init', t)
   checkCommand('ls', t)
+})
+
+test('.source: gets option values', t => { t.plan(1)
+  const source = 'some-source'
+  cli.argv = { s: source }
+  t.is(cli.source, source)
 })
 
 function checkCommand (command, t) {
@@ -57,7 +59,7 @@ function checkCommand (command, t) {
 }
 
 let cli, args
-test.beforeEach('setup', () => {
+test.beforeEach('setup', t => {
   args = {
     demand () {},
     usage () {},
@@ -70,4 +72,5 @@ test.beforeEach('setup', () => {
     help () {}
   }
   cli = new Cli(args)
+  t.is(cli.args, args)
 })
